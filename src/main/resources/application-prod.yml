@@ -1,0 +1,11 @@
+spring:
+  config:
+    activate:
+      on-profile: prod
+
+framework:
+  datasource:
+    mode: xa
+    jndi:
+      primary-name: java:comp/env/jdbc/corePrimary
+      secondary-name: java:comp/env/jdbc/coreSecondary

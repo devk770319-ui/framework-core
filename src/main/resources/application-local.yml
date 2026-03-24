@@ -1,0 +1,29 @@
+spring:
+  config:
+    activate:
+      on-profile: local
+
+framework:
+  datasource:
+    mode: multi
+    local:
+      primary:
+        driver-class-name: org.h2.Driver
+        url: jdbc:h2:mem:coredb;MODE=MySQL;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+        username: sa
+        password: ""
+        xa-data-source-class-name: org.h2.jdbcx.JdbcDataSource
+        xa-properties:
+          URL: jdbc:h2:mem:coredb;MODE=MySQL;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+          user: sa
+          password: ""
+      secondary:
+        driver-class-name: org.h2.Driver
+        url: jdbc:h2:mem:batchdb;MODE=MySQL;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+        username: sa
+        password: ""
+        xa-data-source-class-name: org.h2.jdbcx.JdbcDataSource
+        xa-properties:
+          URL: jdbc:h2:mem:batchdb;MODE=MySQL;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+          user: sa
+          password: ""
